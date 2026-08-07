@@ -26,19 +26,19 @@ export const Header: React.FC<HeaderProps> = ({
           >
             {/* Official Saovabha Emblem Logo */}
             <div className="rounded-full bg-white p-0.5 shadow-md border-2 border-amber-300 shrink-0 transform transition group-hover:scale-105">
-              <SaovabhaLogo className="w-13 h-13 sm:w-16 sm:h-16" />
+              <SaovabhaLogo className="w-11 h-11 min-[380px]:w-13 min-[380px]:h-13 sm:w-16 sm:h-16" />
             </div>
 
             <div>
               <div className="flex flex-col">
-                <h1 className="text-base sm:text-lg font-extrabold tracking-tight text-white font-['Kanit',sans-serif] leading-tight">
+                <h1 className="text-xs min-[380px]:text-sm sm:text-base md:text-lg font-extrabold tracking-tight text-white font-['Kanit',sans-serif] leading-tight">
                   {CONTACT_INFO.clinicName}
                 </h1>
-                <p className="text-xs sm:text-sm text-amber-200 font-bold flex items-center gap-1.5 mt-0.5">
+                <p className="text-[11px] min-[380px]:text-xs sm:text-sm text-amber-200 font-bold flex items-center gap-1.5 mt-0.5">
                   {CONTACT_INFO.instituteName}
                 </p>
               </div>
-              <p className="text-[11px] text-blue-100/90 font-light mt-0.5">
+              <p className="text-[10px] min-[380px]:text-[11px] sm:text-xs text-blue-100/90 font-light mt-0.5 leading-tight">
                 {CONTACT_INFO.agencyNameEn}
               </p>
             </div>
