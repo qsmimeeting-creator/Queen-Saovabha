@@ -159,7 +159,7 @@ export const ContactSection: React.FC = () => {
               className="w-full bg-emerald-500 hover:bg-emerald-600 text-white font-bold py-2.5 px-4 rounded-2xl text-xs flex items-center justify-center gap-2 shadow-sm transition mt-2"
             >
               <MessageCircle className="w-4 h-4" />
-              <span>เพิ่มเพื่อน LINE (@saovabha)</span>
+              <span>เพิ่มเพื่อน LINE</span>
               <ArrowUpRight className="w-4 h-4" />
             </a>
           </div>
