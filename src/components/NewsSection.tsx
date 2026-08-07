@@ -5,7 +5,7 @@ import { CONTACT_INFO } from '../data/mockData';
 export const NewsSection: React.FC = () => {
   const [copiedLink, setCopiedLink] = React.useState(false);
 
-  const facebookPageUrl = CONTACT_INFO.facebookUrl; // https://www.facebook.com/SaovabhaInstitute
+  const facebookPageUrl = CONTACT_INFO.facebookUrl; // https://www.facebook.com/QSMITRCS
   const facebookIframeSrc = `https://www.facebook.com/plugins/page.php?href=${encodeURIComponent(facebookPageUrl)}&tabs=timeline&width=500&height=650&small_header=false&adapt_container_width=true&hide_cover=false&show_facepile=true`;
 
   const handleShare = () => {
@@ -101,7 +101,7 @@ export const NewsSection: React.FC = () => {
             rel="noopener noreferrer"
             className="underline font-bold text-blue-700 hover:text-blue-900 shrink-0"
           >
-            https://www.facebook.com/SaovabhaInstitute
+            https://www.facebook.com/QSMITRCS
           </a>
         </div>
       </div>

@@ -16,8 +16,8 @@ export const ContactSection: React.FC = () => {
   const [inputQuestion, setInputQuestion] = useState('');
   const [isAskingAi, setIsAskingAi] = useState(false);
 
-  const messengerUrl = CONTACT_INFO.facebookMessengerUrl; // https://m.me/SaovabhaInstitute
-  const facebookPageUrl = CONTACT_INFO.facebookUrl; // https://www.facebook.com/SaovabhaInstitute
+  const messengerUrl = CONTACT_INFO.facebookMessengerUrl; // https://m.me/QSMITRCS
+  const facebookPageUrl = CONTACT_INFO.facebookUrl; // https://www.facebook.com/QSMITRCS
 
   const handleAskAi = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -126,7 +126,7 @@ export const ContactSection: React.FC = () => {
             className="w-full sm:w-auto bg-blue-600 hover:bg-blue-700 text-white font-bold px-5 py-3 rounded-2xl text-xs flex items-center justify-center gap-2 shadow-md transition shrink-0"
           >
             <MessageSquare className="w-4 h-4" />
-            <span>เปิดแชท Messenger (m.me/SaovabhaInstitute)</span>
+            <span>เปิดแชท Messenger (m.me/QSMITRCS)</span>
             <ArrowUpRight className="w-4 h-4" />
           </a>
         </div>
@@ -202,7 +202,7 @@ export const ContactSection: React.FC = () => {
                 <ArrowUpRight className="w-3.5 h-3.5 text-slate-400 group-hover:text-blue-600 shrink-0" />
               </h4>
               <p className="text-xs text-slate-600 mb-3">
-                https://m.me/SaovabhaInstitute
+                https://m.me/QSMITRCS
               </p>
             </div>
             <div className="pt-2 border-t border-slate-100 text-xs font-bold text-blue-600 flex items-center justify-between">

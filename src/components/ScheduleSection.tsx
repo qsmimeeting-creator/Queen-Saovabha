@@ -128,7 +128,7 @@ export const ScheduleSection: React.FC = () => {
           </li>
           <li className="flex items-start gap-2 bg-slate-50 p-3 rounded-2xl border border-slate-100">
             <CheckCircle2 className="w-4 h-4 text-emerald-600 shrink-0 mt-0.5" />
-            <span>ต้องทำการ<strong>นั่งสังเกตอาการหลังได้รับวัคซีนอย่างน้อย 30 นาที</strong> ณ จุดพักรอ เพื่อความปลอดภัยสูงสุด</span>
+            <span>ต้องทำการ<strong>นั่งสังเกตอาการหลังได้รับวัคซีนอย่างน้อย 15-30 นาที</strong> ณ จุดพักรอ เพื่อความปลอดภัยสูงสุด</span>
           </li>
         </ul>
       </div>
