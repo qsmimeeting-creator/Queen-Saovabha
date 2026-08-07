@@ -80,25 +80,25 @@ export default function App() {
               <span>เวลาบริการ</span>
             </button>
 
-            <a
-              href={CONTACT_INFO.googleMapsShareUrl}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="flex flex-col items-center gap-0.5 px-2 py-1 rounded-xl transition hover:text-white"
+            <button
+              onClick={() => setActiveTab('map')}
+              className={`flex flex-col items-center gap-0.5 px-2 py-1 rounded-xl transition ${
+                activeTab === 'map' ? 'text-rose-400 font-bold' : 'hover:text-white'
+              }`}
             >
               <MapPin className="w-5 h-5 text-rose-400" />
               <span>แผนที่</span>
-            </a>
+            </button>
 
-            <a
-              href={CONTACT_INFO.facebookMessengerUrl}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="flex flex-col items-center gap-0.5 px-2 py-1 rounded-xl transition hover:text-white"
+            <button
+              onClick={() => setActiveTab('contact')}
+              className={`flex flex-col items-center gap-0.5 px-2 py-1 rounded-xl transition ${
+                activeTab === 'contact' ? 'text-purple-400 font-bold' : 'hover:text-white'
+              }`}
             >
               <HelpCircle className="w-5 h-5 text-purple-400" />
               <span>สอบถาม</span>
-            </a>
+            </button>
 
             <a
               href={CONTACT_INFO.facebookUrl}

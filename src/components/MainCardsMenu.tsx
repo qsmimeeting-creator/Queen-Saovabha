@@ -12,7 +12,7 @@ export const MainCardsMenu: React.FC<MainCardsMenuProps> = ({ onSelectTab }) => 
     {
       id: 'vaccines',
       title: 'รายการและราคาวัคซีน',
-      subtitle: 'เปิดไฟล์เอกสารราคาวัคซีนทางการ',
+      subtitle: 'เปิดไฟล์เอกสารราคาวัคซีน',
       bgColor: 'bg-indigo-600',
       icon: <Syringe className="w-8 h-8 text-white stroke-[2.2]" />,
       badgeText: 'Google Drive',
@@ -29,24 +29,22 @@ export const MainCardsMenu: React.FC<MainCardsMenuProps> = ({ onSelectTab }) => 
       isInternal: true
     },
     {
-      id: 'map',
-      title: 'แผนที่',
-      subtitle: 'พิกัดที่ตั้งและการนำทางด้วย Google Maps',
+      id: 'map' as NavigationTab,
+      title: 'แผนที่และการเดินทาง',
+      subtitle: 'พิกัดและวิธีเดินทาง (BTS / MRT / รถเมล์)',
       bgColor: 'bg-rose-500',
       icon: <MapPin className="w-8 h-8 text-white stroke-[2.2]" />,
-      badgeText: 'Google Maps',
-      url: CONTACT_INFO.googleMapsShareUrl,
-      isInternal: false
+      badgeText: 'ข้อมูลในระบบ',
+      isInternal: true
     },
     {
-      id: 'contact',
+      id: 'contact' as NavigationTab,
       title: 'สอบถามข้อมูล',
-      subtitle: 'แชทสอบถามเจ้าหน้าที่ผ่าน Facebook Messenger',
+      subtitle: 'โทรศัพท์, Facebook Messenger และ LINE',
       bgColor: 'bg-blue-600',
       icon: <HelpCircle className="w-8 h-8 text-white stroke-[2.2]" />,
-      badgeText: 'Messenger',
-      url: CONTACT_INFO.facebookMessengerUrl,
-      isInternal: false
+      badgeText: 'ข้อมูลในระบบ',
+      isInternal: true
     },
     {
       id: 'news',
