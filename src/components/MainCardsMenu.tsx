@@ -31,7 +31,7 @@ export const MainCardsMenu: React.FC<MainCardsMenuProps> = ({ onSelectTab }) => 
     {
       id: 'map' as NavigationTab,
       title: 'แผนที่และการเดินทาง',
-      subtitle: 'พิกัดและวิธีเดินทาง (BTS / MRT / รถเมล์)',
+      subtitle: 'พิกัดที่ตั้งและวิธีเดินทาง (BTS / MRT / รถเมล์)',
       bgColor: 'bg-rose-500',
       icon: <MapPin className="w-8 h-8 text-white stroke-[2.2]" />,
       badgeText: 'ข้อมูลในระบบ',
