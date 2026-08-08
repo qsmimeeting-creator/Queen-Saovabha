@@ -24,7 +24,7 @@ export const MapSection: React.FC = () => {
   const directNavUrl = `https://www.google.com/maps/dir/?api=1&destination=${CONTACT_INFO.coordinates.lat},${CONTACT_INFO.coordinates.lng}`;
 
   // Bus numbers list
-  const busList = ['4', '21', '45', '46', '47', '50', '67', '109', '141', '507'];
+  const busList = ['4', '15', '47', '50', '74', '77', '109', '163', '172', '177', '514'];
 
   return (
     <div className="w-full max-w-4xl mx-auto px-2 sm:px-4 py-4 sm:py-6">
