@@ -157,7 +157,7 @@ export const MapSection: React.FC = () => {
 
           <div className="text-xs space-y-2 text-slate-600">
             <div className="bg-amber-50 p-3 rounded-2xl border border-amber-200 text-amber-950 leading-relaxed font-medium">
-              💡 <strong>จุดสังเกตสำคัญ:</strong> ตั้งอยู่ริมถนนพระรามที่ 4 แขวงปทุมวัน เขตปทุมวัน กรุงเทพมหานคร ติดกับจามจุรีสแควร์ และอยู่ตรงข้ามกับโรงพยาบาลจุฬาลงกรณ์ สภากาชาดไทย ฝั่งถนนอังรีดูนังต์
+              💡 <strong>จุดสังเกตสำคัญ:</strong> ตั้งอยู่ริมถนนพระรามที่ 4 ติดกับจามจุรีสแควร์ และอยู่ตรงข้ามกับโรงพยาบาลจุฬาลงกรณ์ สภากาชาดไทย ฝั่งถนนอังรีดูนังต์
             </div>
           </div>
         </div>
