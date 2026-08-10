@@ -3,7 +3,6 @@ import { ExternalLink, ArrowUpRight, FileSpreadsheet, Eye, X, BookOpen, Tag } fr
 import { CONTACT_INFO, VACCINE_DOCUMENTS } from '../data/mockData';
 
 export const VaccineSection: React.FC = () => {
-  const [activeTab, setActiveTab] = useState<'all' | 'price' | 'info'>('all');
   const [previewDoc, setPreviewDoc] = useState<{ title: string; previewUrl: string; driveUrl: string } | null>(null);
 
   return (
@@ -26,159 +25,118 @@ export const VaccineSection: React.FC = () => {
             </div>
           </div>
         </div>
-
-        {/* Filter Sub-Tabs */}
-        <div className="mt-5 pt-4 border-t border-white/20 flex flex-wrap gap-2 text-xs font-semibold">
-          <button
-            onClick={() => setActiveTab('all')}
-            className={`px-4 py-2 rounded-xl transition flex items-center gap-1.5 ${
-              activeTab === 'all'
-                ? 'bg-white text-indigo-950 font-bold shadow-md'
-                : 'bg-white/10 hover:bg-white/20 text-white'
-            }`}
-          >
-            <span>📌 เอกสารทั้งหมด</span>
-          </button>
-
-          <button
-            onClick={() => setActiveTab('price')}
-            className={`px-4 py-2 rounded-xl transition flex items-center gap-1.5 ${
-              activeTab === 'price'
-                ? 'bg-amber-400 text-slate-950 font-bold shadow-md'
-                : 'bg-white/10 hover:bg-white/20 text-white'
-            }`}
-          >
-            <Tag className="w-4 h-4" />
-            <span>ราคาวัคซีน</span>
-          </button>
-
-          <button
-            onClick={() => setActiveTab('info')}
-            className={`px-4 py-2 rounded-xl transition flex items-center gap-1.5 ${
-              activeTab === 'info'
-                ? 'bg-sky-400 text-slate-950 font-bold shadow-md'
-                : 'bg-white/10 hover:bg-white/20 text-white'
-            }`}
-          >
-            <BookOpen className="w-4 h-4" />
-            <span>ข้อมูลวัคซีน</span>
-          </button>
-        </div>
       </div>
 
       {/* SECTION 1: ราคาวัคซีน */}
-      {(activeTab === 'all' || activeTab === 'price') && (
-        <div className="mb-8">
-          <div className="flex items-center justify-between mb-3">
-            <div className="flex items-center gap-2">
-              <span className="p-2 bg-amber-100 text-amber-900 rounded-xl">
-                <Tag className="w-5 h-5" />
-              </span>
-              <div>
-                <h3 className="text-lg font-bold text-slate-900 font-['Kanit',sans-serif]">
-                  ราคาวัคซีน
-                </h3>
-                <p className="text-xs text-slate-500">
-                  คลิกที่รูปหน้าปกเพื่อเปิดไฟล์เอกสารแสดงรายการและราคาวัคซีนสถานเสาวภา
-                </p>
-              </div>
-            </div>
-          </div>
-
-          <div className="bg-white rounded-3xl border-2 border-amber-300 shadow-md p-4 sm:p-6 overflow-hidden">
-            <div className="flex flex-col md:flex-row items-center gap-6">
-              
-              {/* Cover Image Container */}
-              <a
-                href={VACCINE_DOCUMENTS.price.driveUrl}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="group relative w-full md:w-64 aspect-[3/4] bg-slate-100 rounded-2xl overflow-hidden border-2 border-amber-200 shadow-md hover:shadow-xl transition-all duration-300 shrink-0 flex items-center justify-center cursor-pointer"
-              >
-                <img
-                  src={VACCINE_DOCUMENTS.price.coverImage}
-                  alt={VACCINE_DOCUMENTS.price.title}
-                  referrerPolicy="no-referrer"
-                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
-                />
-                <div className="absolute inset-0 bg-slate-900/40 opacity-0 group-hover:opacity-100 transition-opacity flex flex-col items-center justify-center text-white p-3 text-center">
-                  <ExternalLink className="w-10 h-10 mb-2 drop-shadow-md" />
-                  <span className="text-xs font-bold bg-amber-400 text-slate-950 px-3 py-1 rounded-full shadow-lg">
-                    คลิกเพื่อเปิดดูเอกสาร
-                  </span>
-                </div>
-              </a>
-
-              {/* Information & Action Buttons */}
-              <div className="flex-1 flex flex-col justify-between w-full">
-                <div>
-                  <h4 className="text-xl font-extrabold text-slate-900 font-['Kanit',sans-serif] mb-2">
-                    {VACCINE_DOCUMENTS.price.title}
-                  </h4>
-                  <p className="text-xs sm:text-sm text-slate-600 mb-4 leading-relaxed">
-                    {VACCINE_DOCUMENTS.price.subtitle}
-                  </p>
-                  
-                  <div className="bg-amber-50 border border-amber-200 rounded-2xl p-3.5 text-xs text-amber-950 mb-6 space-y-1">
-                    <p className="font-bold flex items-center gap-1.5">
-                      <span>💡 คำแนะนำ:</span>
-                    </p>
-                    <p>
-                      คลิกที่รูปภาพหน้าปก หรือปุ่มด้านล่างเพื่อเข้าดูไฟล์รายการและราคาวัคซีนล่าสุดแบบเต็ม
-                    </p>
-                  </div>
-                </div>
-
-                <div className="flex flex-col sm:flex-row items-center gap-3">
-                  <a
-                    href={VACCINE_DOCUMENTS.price.driveUrl}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="w-full sm:w-auto bg-amber-500 hover:bg-amber-600 text-slate-950 font-bold px-5 py-3 rounded-2xl text-xs flex items-center justify-center gap-2 shadow-md transition"
-                  >
-                    <ExternalLink className="w-4 h-4" />
-                    <span>เปิดเอกสาร</span>
-                  </a>
-
-                  <button
-                    onClick={() =>
-                      setPreviewDoc({
-                        title: VACCINE_DOCUMENTS.price.title,
-                        previewUrl: VACCINE_DOCUMENTS.price.previewUrl,
-                        driveUrl: VACCINE_DOCUMENTS.price.driveUrl
-                      })
-                    }
-                    className="w-full sm:w-auto bg-indigo-50 hover:bg-indigo-100 text-indigo-700 font-bold px-4 py-3 rounded-2xl text-xs flex items-center justify-center gap-2 border border-indigo-200 transition"
-                  >
-                    <Eye className="w-4 h-4" />
-                    <span>ดูตัวอย่าง</span>
-                  </button>
-                </div>
-              </div>
-
+      <div className="mb-8">
+        <div className="flex items-center justify-between mb-3">
+          <div className="flex items-center gap-2">
+            <span className="p-2 bg-amber-100 text-amber-900 rounded-xl">
+              <Tag className="w-5 h-5" />
+            </span>
+            <div>
+              <h3 className="text-lg font-bold text-slate-900 font-['Kanit',sans-serif]">
+                ราคาวัคซีน
+              </h3>
+              <p className="text-xs text-slate-500">
+                คลิกที่รูปหน้าปกเพื่อเปิดไฟล์เอกสารแสดงรายการและราคาวัคซีนสถานเสาวภา
+              </p>
             </div>
           </div>
         </div>
-      )}
 
-      {/* SECTION 2: ข้อมูลวัคซีน */}
-      {(activeTab === 'all' || activeTab === 'info') && (
-        <div className="mb-8">
-          <div className="flex items-center justify-between mb-3">
-            <div className="flex items-center gap-2">
-              <span className="p-2 bg-sky-100 text-sky-900 rounded-xl">
-                <BookOpen className="w-5 h-5" />
-              </span>
+        <div className="bg-white rounded-3xl border-2 border-amber-300 shadow-md p-4 sm:p-6 overflow-hidden">
+          <div className="flex flex-col md:flex-row items-center gap-6">
+            
+            {/* Cover Image Container */}
+            <a
+              href={VACCINE_DOCUMENTS.price.driveUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="group relative w-full md:w-64 aspect-[3/4] bg-slate-100 rounded-2xl overflow-hidden border-2 border-amber-200 shadow-md hover:shadow-xl transition-all duration-300 shrink-0 flex items-center justify-center cursor-pointer"
+            >
+              <img
+                src={VACCINE_DOCUMENTS.price.coverImage}
+                alt={VACCINE_DOCUMENTS.price.title}
+                referrerPolicy="no-referrer"
+                className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+              />
+              <div className="absolute inset-0 bg-slate-900/40 opacity-0 group-hover:opacity-100 transition-opacity flex flex-col items-center justify-center text-white p-3 text-center">
+                <ExternalLink className="w-10 h-10 mb-2 drop-shadow-md" />
+                <span className="text-xs font-bold bg-amber-400 text-slate-950 px-3 py-1 rounded-full shadow-lg">
+                  คลิกเพื่อเปิดดูเอกสาร
+                </span>
+              </div>
+            </a>
+
+            {/* Information & Action Buttons */}
+            <div className="flex-1 flex flex-col justify-between w-full">
               <div>
-                <h3 className="text-lg font-bold text-slate-900 font-['Kanit',sans-serif]">
-                  ข้อมูลวัคซีน
-                </h3>
-                <p className="text-xs text-slate-500">
-                  คลิกที่รูปหน้าปกเพื่ออ่านรายละเอียดเอกสารข้อมูลวัคซีนสถานเสาวภา
+                <h4 className="text-xl font-extrabold text-slate-900 font-['Kanit',sans-serif] mb-2">
+                  {VACCINE_DOCUMENTS.price.title}
+                </h4>
+                <p className="text-xs sm:text-sm text-slate-600 mb-4 leading-relaxed">
+                  {VACCINE_DOCUMENTS.price.subtitle}
                 </p>
+                
+                <div className="bg-amber-50 border border-amber-200 rounded-2xl p-3.5 text-xs text-amber-950 mb-6 space-y-1">
+                  <p className="font-bold flex items-center gap-1.5">
+                    <span>💡 คำแนะนำ:</span>
+                  </p>
+                  <p>
+                    คลิกที่รูปภาพหน้าปก หรือปุ่มด้านล่างเพื่อเข้าดูไฟล์รายการและราคาวัคซีนล่าสุดแบบเต็ม
+                  </p>
+                </div>
+              </div>
+
+              <div className="flex flex-col sm:flex-row items-center gap-3">
+                <a
+                  href={VACCINE_DOCUMENTS.price.driveUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="w-full sm:w-auto bg-amber-500 hover:bg-amber-600 text-slate-950 font-bold px-5 py-3 rounded-2xl text-xs flex items-center justify-center gap-2 shadow-md transition"
+                >
+                  <ExternalLink className="w-4 h-4" />
+                  <span>เปิดเอกสาร</span>
+                </a>
+
+                <button
+                  onClick={() =>
+                    setPreviewDoc({
+                      title: VACCINE_DOCUMENTS.price.title,
+                      previewUrl: VACCINE_DOCUMENTS.price.previewUrl,
+                      driveUrl: VACCINE_DOCUMENTS.price.driveUrl
+                    })
+                  }
+                  className="w-full sm:w-auto bg-indigo-50 hover:bg-indigo-100 text-indigo-700 font-bold px-4 py-3 rounded-2xl text-xs flex items-center justify-center gap-2 border border-indigo-200 transition"
+                >
+                  <Eye className="w-4 h-4" />
+                  <span>ดูตัวอย่าง</span>
+                </button>
               </div>
             </div>
+
           </div>
+        </div>
+      </div>
+
+      {/* SECTION 2: ข้อมูลวัคซีน */}
+      <div className="mb-8">
+        <div className="flex items-center justify-between mb-3">
+          <div className="flex items-center gap-2">
+            <span className="p-2 bg-sky-100 text-sky-900 rounded-xl">
+              <BookOpen className="w-5 h-5" />
+            </span>
+            <div>
+              <h3 className="text-lg font-bold text-slate-900 font-['Kanit',sans-serif]">
+                ข้อมูลวัคซีน
+              </h3>
+              <p className="text-xs text-slate-500">
+                คลิกที่รูปหน้าปกเพื่ออ่านรายละเอียดเอกสารข้อมูลวัคซีนสถานเสาวภา
+              </p>
+            </div>
+          </div>
+        </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             {VACCINE_DOCUMENTS.infoList.map((doc, idx) => (
@@ -247,7 +205,6 @@ export const VaccineSection: React.FC = () => {
             ))}
           </div>
         </div>
-      )}
 
       {/* Preview Modal for Embedded View */}
       {previewDoc && (
