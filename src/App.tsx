@@ -60,15 +60,15 @@ export default function App() {
               <span>หน้าแรก</span>
             </button>
 
-            <a
-              href={CONTACT_INFO.vaccineDriveUrl}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="flex flex-col items-center gap-0.5 px-2 py-1 rounded-xl transition hover:text-white"
+            <button
+              onClick={() => setActiveTab('vaccines')}
+              className={`flex flex-col items-center gap-0.5 px-2 py-1 rounded-xl transition ${
+                activeTab === 'vaccines' ? 'text-indigo-400 font-bold' : 'hover:text-white'
+              }`}
             >
               <Syringe className="w-5 h-5 text-indigo-400" />
-              <span>ราคาวัคซีน</span>
-            </a>
+              <span>วัคซีน</span>
+            </button>
 
             <button
               onClick={() => setActiveTab('schedule')}

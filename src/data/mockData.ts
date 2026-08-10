@@ -377,3 +377,38 @@ export const CONTACT_INFO = {
     lng: 100.531713
   }
 };
+
+export const VACCINE_DOCUMENTS = {
+  price: {
+    category: 'price',
+    categoryName: 'ราคาวัคซีน',
+    title: 'รายการและราคาวัคซีน',
+    subtitle: 'เอกสารแสดงรายการวัคซีนและอัตราค่าบริการ สถานเสาวภา สภากาชาดไทย',
+    coverImage: 'https://lh3.googleusercontent.com/d/1BZmtoH5fzfA6KNFqrA3gZZaV3c3_gXj2',
+    driveUrl: 'https://drive.google.com/file/d/1a-gtxVDNaBeb3pYUATA1LSgpYQv-5YV6/view?usp=drive_link',
+    previewUrl: 'https://drive.google.com/file/d/1a-gtxVDNaBeb3pYUATA1LSgpYQv-5YV6/preview'
+  },
+  infoList: [
+    {
+      id: 'info-1',
+      category: 'info',
+      categoryName: 'ข้อมูลวัคซีน',
+      title: 'วัคซีนสำหรับวัยรุ่นและผู้ใหญ่ตอนต้น',
+      subtitle: '',
+      coverImage: 'https://lh3.googleusercontent.com/d/168vUWGgoNMi1-BjkIKnsMdnSDngSK07a',
+      driveUrl: 'https://drive.google.com/file/d/1kR7JmHjLfgvx-gVRlkkuUPeuWW61MkjO/view?usp=drive_link',
+      previewUrl: 'https://drive.google.com/file/d/1kR7JmHjLfgvx-gVRlkkuUPeuWW61MkjO/preview'
+    },
+    {
+      id: 'info-2',
+      category: 'info',
+      categoryName: 'ข้อมูลวัคซีน',
+      title: 'วัคซีนสำหรับผู้สูงอายุ',
+      subtitle: '',
+      coverImage: 'https://lh3.googleusercontent.com/d/1vdKiQ8TuWX_nv_mYsmezbBOkYNLcAJGM',
+      driveUrl: 'https://drive.google.com/file/d/1S96SBM2WJlXrQAWUXURHAsKj7UM5FwRN/view?usp=drive_link',
+      previewUrl: 'https://drive.google.com/file/d/1S96SBM2WJlXrQAWUXURHAsKj7UM5FwRN/preview'
+    }
+  ]
+};
+

@@ -10,14 +10,13 @@ interface MainCardsMenuProps {
 export const MainCardsMenu: React.FC<MainCardsMenuProps> = ({ onSelectTab }) => {
   const menuItems = [
     {
-      id: 'vaccines',
+      id: 'vaccines' as NavigationTab,
       title: 'รายการและราคาวัคซีน',
-      subtitle: 'เปิดไฟล์เอกสารราคาวัคซีน',
+      subtitle: 'ราคาและข้อมูลวัคซีน สถานเสาวภา สภากาชาดไทย',
       bgColor: 'bg-indigo-600',
       icon: <Syringe className="w-8 h-8 text-white stroke-[2.2]" />,
-      badgeText: 'Google Drive',
-      url: CONTACT_INFO.vaccineDriveUrl,
-      isInternal: false
+      badgeText: 'ข้อมูลในระบบ',
+      isInternal: true
     },
     {
       id: 'schedule' as NavigationTab,
