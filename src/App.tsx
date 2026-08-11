@@ -15,13 +15,18 @@ export default function App() {
   const [activeTab, setActiveTab] = useState<NavigationTab>('home');
   const [isDeployModalOpen, setIsDeployModalOpen] = useState<boolean>(false);
 
+  const handleSelectTab = (tab: NavigationTab) => {
+    setActiveTab(tab);
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  };
+
   return (
     <div className="min-h-screen bg-slate-100 text-slate-800 flex flex-col font-['Prompt',sans-serif]">
       
       {/* Top Header */}
       <Header
         activeTab={activeTab}
-        setActiveTab={setActiveTab}
+        setActiveTab={handleSelectTab}
         onOpenDeployGuide={() => setIsDeployModalOpen(true)}
       />
 
@@ -31,7 +36,7 @@ export default function App() {
         <div className="w-full">
           {/* Render Active View */}
           {activeTab === 'home' && (
-            <MainCardsMenu onSelectTab={(tab) => setActiveTab(tab)} />
+            <MainCardsMenu onSelectTab={handleSelectTab} />
           )}
 
           {activeTab === 'vaccines' && <VaccineSection />}
@@ -51,7 +56,7 @@ export default function App() {
         <div className="sticky bottom-0 z-40 bg-slate-900 text-slate-300 border-t border-slate-800 py-2.5 px-3 shadow-2xl">
           <div className="max-w-xl mx-auto flex items-center justify-around text-xs font-medium">
             <button
-              onClick={() => setActiveTab('home')}
+              onClick={() => handleSelectTab('home')}
               className={`flex flex-col items-center gap-0.5 px-2 py-1 rounded-xl transition ${
                 activeTab === 'home' ? 'text-amber-400 font-bold' : 'hover:text-white'
               }`}
@@ -61,7 +66,7 @@ export default function App() {
             </button>
 
             <button
-              onClick={() => setActiveTab('vaccines')}
+              onClick={() => handleSelectTab('vaccines')}
               className={`flex flex-col items-center gap-0.5 px-2 py-1 rounded-xl transition ${
                 activeTab === 'vaccines' ? 'text-indigo-400 font-bold' : 'hover:text-white'
               }`}
@@ -71,7 +76,7 @@ export default function App() {
             </button>
 
             <button
-              onClick={() => setActiveTab('schedule')}
+              onClick={() => handleSelectTab('schedule')}
               className={`flex flex-col items-center gap-0.5 px-2 py-1 rounded-xl transition ${
                 activeTab === 'schedule' ? 'text-emerald-400 font-bold' : 'hover:text-white'
               }`}
@@ -81,7 +86,7 @@ export default function App() {
             </button>
 
             <button
-              onClick={() => setActiveTab('map')}
+              onClick={() => handleSelectTab('map')}
               className={`flex flex-col items-center gap-0.5 px-2 py-1 rounded-xl transition ${
                 activeTab === 'map' ? 'text-rose-400 font-bold' : 'hover:text-white'
               }`}
@@ -91,7 +96,7 @@ export default function App() {
             </button>
 
             <button
-              onClick={() => setActiveTab('contact')}
+              onClick={() => handleSelectTab('contact')}
               className={`flex flex-col items-center gap-0.5 px-2 py-1 rounded-xl transition ${
                 activeTab === 'contact' ? 'text-purple-400 font-bold' : 'hover:text-white'
               }`}
